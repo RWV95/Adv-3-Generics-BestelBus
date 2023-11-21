@@ -41,7 +41,44 @@ public class Bestelbus<T extends Lading> {
     }
 
     public T zoekZwaarsteVoorwerp() {
-        return null;
+        if (lading.isEmpty()) {
+            return null;
+        } else {
+            return zoekZwaarsteVoorwerp(0);
+        }
     }
+
+    private T zoekZwaarsteVoorwerp (int index) {
+        if (index == lading.size()) {
+            return lading.get(index - 1);
+        }
+        T zwaarsteVoorwerp = zoekZwaarsteVoorwerp(index + 1);
+        if (lading.get(index).getGewicht() > zwaarsteVoorwerp.getGewicht()) {
+            return lading.get(index);
+        } else {
+            return zwaarsteVoorwerp;
+        }
+    }
+
+    // Iteratieve methode
+
+//    public T zoekZwaarsteVoorwerp() {
+//        if (lading.isEmpty()) {
+//            return null;                      // Return null for an empty list
+//        }
+//
+//        T zwaarsteVoorwerp = lading.get(0);   // Assume the first object is the heaviest initially
+//
+//        for (int i = 1; i < lading.size(); i++) {
+//            T currentObject = lading.get(i);
+//
+//            // Compare the weight of the current object with the weight of the heaviest object so far
+//            if (currentObject.getGewicht() > zwaarsteVoorwerp.getGewicht()) {
+//                zwaarsteVoorwerp = currentObject; // Update if the current object is heavier
+//            }
+//        }
+//
+//        return zwaarsteVoorwerp;
+//    }
 
 }

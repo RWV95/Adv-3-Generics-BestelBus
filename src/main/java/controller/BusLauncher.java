@@ -1,5 +1,6 @@
 package controller;
 
+import model.Bestelbus;
 import model.Pakket;
 import model.PakketLezer;
 import model.PakkettenBus;
@@ -17,6 +18,15 @@ public class BusLauncher {
         for (Pakket p : lijstVanBestand) {
             kuBus.laadPakket(p);
         }
+
+        Bestelbus<Pakket> testBus = new Bestelbus<>("Test", 500);
+        List<Pakket> lijstPakketten;
+        lijstPakketten = lezerBestand.leesPakketLijst("src/main/resources/pakketlijst.txt");
+        for (Pakket pakket : lijstPakketten) {
+            testBus.laadVoorwerp(pakket);
+        }
+
+        System.out.println(testBus.zoekZwaarsteVoorwerp());
 
 
 
