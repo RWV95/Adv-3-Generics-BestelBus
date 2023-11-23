@@ -1,6 +1,6 @@
 package model;
 
-public class Pakket implements Lading {
+public class Pakket implements Weegbaar {
 
     private String naamVanKind;
     private String cadeau;

@@ -5,7 +5,7 @@ package model;
  * Beschrijft de eigenschappen van een tuinmeubel
  */
 
-public class Tuinmeubel implements Lading{
+public class Tuinmeubel implements Weegbaar {
 
     private final String naam;
     private final String type;

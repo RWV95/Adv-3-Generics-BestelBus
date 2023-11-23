@@ -8,7 +8,7 @@ import java.util.List;
  * Beschrijft de eigenschappen van een bestelbus die verschillende voorwerpen kan laden en bezorgen
  */
 
-public class Bestelbus<T extends Lading> {
+public class Bestelbus<T extends Weegbaar> {
 
     public static final int GRENSWAARDE_NEGATIEVE_LADING = 0;
 
